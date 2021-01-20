@@ -1,0 +1,25 @@
+package spring.di;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		// 스프링에게 지시하는 방법으로 코드 변경
+//		Exam exam = new OhExam();
+//		ExamConsole console = new GridExamConsole();
+//		
+//		console.setExam(exam);
+		
+		ApplicationContext context = 
+				new ClassPathXmlApplicationContext("spring/di/setting.xml");
+		
+		ExamConsole console = context.getBean("console");
+		
+//		console.print();
+
+	}
+
+}
