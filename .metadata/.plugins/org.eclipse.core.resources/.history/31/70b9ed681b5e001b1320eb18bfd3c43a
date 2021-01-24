@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- Exam exam = new OhExam(); -->
+	<bean id="exam" class="spring.di.entity.OhExam" p:korean="10" p:english="10" />
+
+	<!-- ExamConsole console = new GridExamConsole(); -->
+	<bean id="console" class="spring.di.ui.InlineExamConsole">
+		<!-- console.setExam(exam); -->
+		<!-- 여기서 name은 setExam을 뜻한다. -->
+		<property name="exam" ref="exam" /> 
+	</bean>
+	
+	<bean id="examList" class="java.util.ArrayList"> <!-- 컬렉션 추가 -->
+		<constructor-arg>
+			<list>
+				<bean class="spring.di.entity.OhExam" p:korean="1" p:english="1" />
+				<ref bean="exam" /> <!-- 위에 id가 exam인 것을 참조! -->
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
