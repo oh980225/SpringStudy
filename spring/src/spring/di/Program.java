@@ -14,7 +14,6 @@ public class Program {
 
 	public static void main(String[] args) {
 
-		// ½ºÇÁ¸µ¿¡°Ô Áö½ÃÇÏ´Â ¹æ¹ýÀ¸·Î ÄÚµå º¯°æ
 //		Exam exam = new OhExam();
 //		ExamConsole console = new GridExamConsole();
 //		
@@ -22,21 +21,18 @@ public class Program {
 		
 		ApplicationContext context = 
 				new ClassPathXmlApplicationContext("spring/di/setting.xml");
-		
-		Exam exam = context.getBean(Exam.class);
-		System.out.println(exam.toString());
-		
-		ExamConsole console = (ExamConsole) context.getBean("console"); // beanÀÇ id·Î(ÀÌ¸§À¸·Î) °¡Á®¿À´Â ¹æ¹ý -> Çü½Ä º¯È¯ ÇÊ¿ä!
-//		ExamConsole console = context.getBean(ExamConsole.class); // ÀÎÀÚÀÇ Å¸ÀÔ°ú ÀÏÄ¡ÇÏ´Â ºÎÇ°À» °¡Á®¿À´Â ¹æ¹ý
+				
+		ExamConsole console = (ExamConsole) context.getBean("console"); // beanï¿½ï¿½ idï¿½ï¿½(ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½Ê¿ï¿½!
+//		ExamConsole console = context.getBean(ExamConsole.class); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ô°ï¿½ ï¿½ï¿½Ä¡ï¿½Ï´ï¿½ ï¿½ï¿½Ç°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		
 		console.print();
 		
-		List<Exam> examList = (List<Exam>) context.getBean("examList"); // new ArrayList<>();
+//		List<Exam> examList = (List<Exam>) context.getBean("examList"); // new ArrayList<>();
 //		examList.add(new OhExam(1,1,1,1));
 		
-		for(Exam e : examList) {
-			System.out.println(e);
-		}
+//		for(Exam e : examList) {
+//			System.out.println(e);
+//		}
 
 	}
 

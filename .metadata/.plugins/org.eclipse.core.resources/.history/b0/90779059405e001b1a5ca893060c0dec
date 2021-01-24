@@ -1,0 +1,32 @@
+package spring.di.ui;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import spring.di.entity.Exam;
+
+public class InlineExamConsole implements ExamConsole {
+
+	@Autowired // 자료형 기본으로 찾음!
+	@Qualifier("exam1") // 찾은 것이 여러개일 경우 부여한 아이디로 구분!
+	private Exam exam;
+	
+	public InlineExamConsole() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public InlineExamConsole(Exam exam) {
+		this.exam = exam;
+	}
+
+	@Override
+	public void print() {
+		System.out.printf("total is %d, avg is %f\n", exam.total(), exam.avg());
+	}
+	
+	@Override
+	public void setExam(Exam exam) {
+		this.exam = exam;
+	}
+
+}

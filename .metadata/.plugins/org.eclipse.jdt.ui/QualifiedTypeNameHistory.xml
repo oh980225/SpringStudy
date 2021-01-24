@@ -3,4 +3,6 @@
 <fullyQualifiedTypeName name="spring.di.entity.Exam"/>
 <fullyQualifiedTypeName name="spring.di.ui.InlineExamConsole"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.portable.ApplicationException"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>
