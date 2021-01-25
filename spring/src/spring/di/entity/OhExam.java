@@ -1,10 +1,16 @@
 package spring.di.entity;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class OhExam implements Exam {
 
+	@Value("20")
 	private int korean;
+	@Value("30")
 	private int english;
+	@Value("40")
 	private int math;
+	@Value("50")
 	private int computer;
 	
 	public OhExam() {

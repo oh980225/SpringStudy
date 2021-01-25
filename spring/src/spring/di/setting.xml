@@ -8,17 +8,19 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	
-	<context:annotation-config />
+	<!-- <context:component-scan base-package="spring.di.ui, spring.di.entity" /> -->
+	<!-- 위 설정으로 ui아래에 있느 클래스를 살피기때문에 밑에 태그는 불필요하다! -->
+	<!-- <context:annotation-config /> -->
 	<!-- Exam exam = new OhExam(); -->
-	<bean id="exam1" class="spring.di.entity.OhExam" p:korean="10" p:english="10" />
-	
-	<bean id="exam2" class="spring.di.entity.OhExam" p:korean="20" p:english="20" />
+	<!-- <bean id="exam" class="spring.di.entity.OhExam" p:korean="10" p:english="10" /> -->
+	<!--  
+	<bean id="exam2" class="spring.di.entity.OhExam" p:korean="20" p:english="20" /> -->
 	<!-- ExamConsole console = new GridExamConsole(); -->
-	<bean id="console" class="spring.di.ui.InlineExamConsole">
+	<!-- <bean id="console" class="spring.di.ui.InlineExamConsole"> -->
 		<!-- console.setExam(exam); -->
 		<!-- 여기서 name은 setExam을 뜻한다. -->
 		<!-- <property name="exam" ref="exam" /> --> 
-	</bean>
+	<!-- </bean> -->
 	
 	<!-- <bean id="examList" class="java.util.ArrayList"> 컬렉션 추가
 		<constructor-arg>

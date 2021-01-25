@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring.di.entity.Exam;
@@ -19,11 +20,13 @@ public class Program {
 //		
 //		console.setExam(exam);
 		
-		ApplicationContext context = 
-				new ClassPathXmlApplicationContext("spring/di/setting.xml");
+//		ApplicationContext context = 
+//				new ClassPathXmlApplicationContext("spring/di/setting.xml"); // XML Configuration
+		
+		ApplicationContext context = new AnnotationConfigApplicationContext(OhDIConfig.class); // Java Configuration 
 				
-		ExamConsole console = (ExamConsole) context.getBean("console"); // bean�� id��(�̸�����) �������� ��� -> ���� ��ȯ �ʿ�!
-//		ExamConsole console = context.getBean(ExamConsole.class); // ������ Ÿ�԰� ��ġ�ϴ� ��ǰ�� �������� ���
+		ExamConsole console = (ExamConsole) context.getBean("console");
+//		ExamConsole console = context.getBean(ExamConsole.class); 
 		
 		console.print();
 		
